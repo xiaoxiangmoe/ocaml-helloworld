@@ -1,0 +1,21 @@
+opam-version: "2.0"
+name: "ocaml-helloworld"
+version: "0.0.1"
+synopsis: "OCaml version hello world program"
+description: """
+This is an OCaml version hello world program.
+"""
+maintainer: "ZHAO Jinxiang <xiaoxiangmoe@gmail.com>"
+authors: "ZHAO Jinxiang <xiaoxiangmoe@gmail.com>"
+license: "MIT"
+homepage: "https://github.com/xiaoxiangmoe/ocaml-helloworld"
+bug-reports: "https://github.com/xiaoxiangmoe/ocaml-helloworld/issues"
+dev-repo: "git+https://github.com/xiaoxiangmoe/ocaml-helloworld.git"
+depends: [
+  "ocaml"
+  "dune" {build}
+  "merlin" {dev}
+  "ocp-indent" {dev}
+  "utop" {dev}
+]
+
