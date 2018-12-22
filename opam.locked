@@ -1,0 +1,44 @@
+opam-version: "2.0"
+name: "ocaml-helloworld"
+version: "0.0.1"
+synopsis: "OCaml version hello world program"
+description: """
+This is an OCaml version hello world program.
+"""
+maintainer: "ZHAO Jinxiang <xiaoxiangmoe@gmail.com>"
+authors: "ZHAO Jinxiang <xiaoxiangmoe@gmail.com>"
+license: "MIT"
+homepage: "https://github.com/xiaoxiangmoe/ocaml-helloworld"
+bug-reports: "https://github.com/xiaoxiangmoe/ocaml-helloworld/issues"
+dev-repo: "git+https://github.com/xiaoxiangmoe/ocaml-helloworld.git"
+depends: [
+  "base-bigarray" {= "base"}
+  "base-bytes" {= "base"}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "biniou" {= "1.2.0"}
+  "camomile" {= "1.0.1"}
+  "cmdliner" {= "1.0.3"}
+  "conf-m4" {= "1"}
+  "conf-which" {= "1"}
+  "cppo" {= "1.6.5"}
+  "dune" {= "1.6.2"}
+  "easy-format" {= "1.3.1"}
+  "jbuilder" {= "transition"}
+  "lambda-term" {= "1.13"}
+  "lwt" {= "4.1.0"}
+  "lwt_log" {= "1.1.0"}
+  "lwt_react" {= "1.1.1"}
+  "merlin" {= "3.2.2"}
+  "ocaml" {= "4.06.1"}
+  "ocaml-system" {= "4.06.1"}
+  "ocamlbuild" {= "0.12.0"}
+  "ocamlfind" {= "1.8.0"}
+  "ocp-indent" {= "1.7.0"}
+  "react" {= "1.2.1"}
+  "result" {= "1.3"}
+  "topkg" {= "1.0.0"}
+  "utop" {= "2.2.0"}
+  "yojson" {= "1.4.1"}
+  "zed" {= "1.6"}
+]

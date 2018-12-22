@@ -6,22 +6,7 @@ OCaml Version Hello World Program
 
 ```sh
 git clone https://github.com/xiaoxiangmoe/ocaml-helloworld.git
-opam switch import opam-switch-universe  --switch .
-opam exec --switch . -- dune exec ./bin/main.exe
-```
-
-## opam switch
-
-export export a compiler universe by
-
-```sh
-opam switch export --full opam-switch-universe
-```
-
-restore enviroment by
-
-```sh
-opam switch import opam-switch-universe --switch .
+opam switch create ./ --locked --yes
 ```
 
 ## debug
@@ -56,8 +41,8 @@ opam exec --switch . -- dune build ./bin/main.exe
 ```sh
 # install
 opam install the-library-name --yes
-# update opam switch snapshot
-opam switch export --full opam-switch-universe
+# update opam lock file
+opam lock
 # modify opam file to add deps
 vim ./opam
 # modify dune file to add deps
