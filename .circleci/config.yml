@@ -1,0 +1,30 @@
+version: 2.1
+jobs:
+  build:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: ocaml/opam2:alpine # the primary container, where your job's commands are run
+    steps:
+      - checkout # check out the code in the project directory
+      - run:
+          name: Add deps
+          command: |
+            sudo apk --no-cache add m4
+      - run:
+          name: Print versions
+          command: |
+            source ~/.profile
+            cat /etc/os-release
+            echo 'OCaml version:'
+            ocaml --version
+            echo 'Opam version:'
+            opam --version
+      - run:
+          name: Init local switch
+          command: |
+            source ~/.profile
+            opam switch create . 4.07.1 --yes
+      - run:
+          name: Run tests
+          command: |
+            source ~/.profile
+            opam exec --switch . -- dune runtest

@@ -1,4 +1,33 @@
-# ocaml-helloworld
+# OCaml HelloWorld
+
+<table>
+  <tr>
+    <th>CI</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>Circle CI (on Linux)</td>
+    <td>
+      <a href="https://circleci.com/gh/xiaoxiangmoe/ocaml-helloworld">
+        <img
+          src="https://img.shields.io/circleci/project/github/xiaoxiangmoe/ocaml-helloworld.svg"
+          alt="Linux Build Status"
+        />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>Azure DevOps (on macOS)</td>
+    <td>
+      <a href="https://dev.azure.com/xiaoxiangmoe/ocaml-helloworld/_build/latest?definitionId=1?branchName=master">
+        <img
+          src="https://img.shields.io/azure-devops/build/xiaoxiangmoe/ocaml-helloworld/1.svg"
+          alt="macOS Build Status"
+        />
+      </a>
+    </td>
+  </tr>
+</table>
 
 OCaml Version Hello World Program
 
@@ -6,7 +35,8 @@ OCaml Version Hello World Program
 
 ```sh
 git clone https://github.com/xiaoxiangmoe/ocaml-helloworld.git
-opam switch create ./ --locked --yes
+opam switch create . --yes
+# opam switch create ./ --locked --yes
 ```
 
 ## debug
@@ -36,15 +66,29 @@ opam exec --switch . -- dune build ./bin/main.exe
 ./_build/default/bin/main.exe
 ```
 
+## unit test
+
+```sh
+opam exec --switch . -- dune runtest
+```
+
 ## install library
 
 ```sh
 # install
 opam install the-library-name --yes
-# update opam lock file
-opam lock
+# do not update opam lock file
+# opam lock
 # modify opam file to add deps
 vim ./opam
 # modify dune file to add deps
 vim ./???/dune
 ```
+
+---
+
+## hint
+
+- do not use lock-file
+- do not use switch export
+- do not use test dependency

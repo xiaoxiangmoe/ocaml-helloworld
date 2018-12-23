@@ -14,8 +14,8 @@ dev-repo: "git+https://github.com/xiaoxiangmoe/ocaml-helloworld.git"
 depends: [
   "ocaml"
   "dune" {build}
-  "merlin" {build}
-  "ocp-indent" {build}
-  "utop" {build}
+  "merlin" {dev}
+  "ocp-indent" {dev}
+  "utop" {dev}
+  "ounit" {dev}
 ]
-

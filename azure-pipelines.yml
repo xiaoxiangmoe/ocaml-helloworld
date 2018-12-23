@@ -1,0 +1,33 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - master
+
+jobs:
+  - job: macOS
+    pool:
+      vmImage: "macOS-10.13"
+    steps:
+      - script: system_profiler SPSoftwareDataType
+        displayName: Report system hardware and software configuration
+      - script: |
+          # ocaml-base-compiler
+          brew install ocaml
+          brew install gpatch
+          brew install opam
+        displayName: Install opam
+      - script: opam init --auto-setup
+        displayName: Init opam
+      - script: |
+          echo ocaml version
+          ocaml --version
+          echo opam version
+          opam --version
+        displayName: Output ocaml version and opam version
+      - script: opam switch create . --yes
+        displayName: Init local switch
+      - script: opam exec --switch . -- dune runtest
+        displayName: Run tests
