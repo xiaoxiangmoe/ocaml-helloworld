@@ -66,6 +66,13 @@ opam exec --switch . -- dune build ./bin/main.exe
 ./_build/default/bin/main.exe
 ```
 
+## build documentation
+
+```sh
+opam exec --switch . -- dune build @doc
+open _build/default/_doc/_html/index.html
+```
+
 ## unit test
 
 ```sh
