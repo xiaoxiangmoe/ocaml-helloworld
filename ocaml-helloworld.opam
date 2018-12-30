@@ -19,4 +19,5 @@ depends: [
   "ocp-indent" {dev}
   "utop" {dev}
   "ounit" {dev}
+  "qcheck" {dev}
 ]
